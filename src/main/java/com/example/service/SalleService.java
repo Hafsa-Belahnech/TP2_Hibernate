@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+//Cette classe SalleService étend la classe abstraite, puis ajoute des méthodes spécifiques
 public class SalleService extends AbstractCrudService<Salle, Long> {
 
     public SalleService(EntityManagerFactory emf) {
