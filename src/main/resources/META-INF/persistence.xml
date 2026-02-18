@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="gestion-salles" transaction-type="RESOURCE_LOCAL">
+
+        <!-- Le fournisseur Hibernate -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.model.Utilisateur</class>
+        <class>com.example.model.Salle</class>
+
+        <properties>
+            <!-- Configuration de la connexion H2 -->
+            <!-- Driver JDBC -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <!-- URL de connexion à la base de données -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1"/>
+            <!-- Nom d'utilisateur -->
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <!-- Mot de passe -->
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <!-- Dialecte Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!-- Configuration de la génération automatique du schéma / Création automatique des tables -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <!-- Afficher les requêtes SQL dans la console -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
