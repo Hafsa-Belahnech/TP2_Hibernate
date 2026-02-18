@@ -8,10 +8,11 @@ import java.time.LocalDate;
 @Table(name = "utilisateurs") //classe: Utilisateur, mais table: utilisateurs
 public class Utilisateur {
 
-    @Id //unique
+    @Id //unique, clé primaire
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    //définir des contraintes sur les champs de cette table, ce sont les annotations de validation
     @NotBlank(message = "Le nom est obligatoire")
     @Size(min = 2, max = 50, message = "Le nom doit contenir entre 2 et 50 caractères")
     @Column(nullable = false)
