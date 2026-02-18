@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public class UtilisateurService extends AbstractCrudService<Utilisateur, Long> {
 
+    //Cette classe étend la classe abstraite + ajoute ses méthodes spécifiques
     public UtilisateurService(EntityManagerFactory emf) {
         super(emf);
     }
