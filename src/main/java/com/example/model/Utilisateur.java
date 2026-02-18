@@ -4,14 +4,14 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "utilisateurs")
+@Entity 
+@Table(name = "utilisateurs") //classe: Utilisateur, mais table: utilisateurs
 public class Utilisateur {
 
-    @Id
+    @Id //unique
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     @NotBlank(message = "Le nom est obligatoire")
     @Size(min = 2, max = 50, message = "Le nom doit contenir entre 2 et 50 caractères")
     @Column(nullable = false)
@@ -33,7 +33,7 @@ public class Utilisateur {
     @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Format de téléphone invalide")
     private String telephone;
 
-    // Constructeur par défaut requis par JPA
+    // Le constructeur par défaut requis par JPA
     public Utilisateur() {
     }
 
@@ -43,7 +43,7 @@ public class Utilisateur {
         this.email = email;
     }
 
-    // Getters et Setters
+    // Les Getters et Setters
     public Long getId() {
         return id;
     }
@@ -92,7 +92,7 @@ public class Utilisateur {
         this.telephone = telephone;
     }
 
-    @Override
+    @Override 
     public String toString() {
         return "Utilisateur{" +
                 "id=" + id +
