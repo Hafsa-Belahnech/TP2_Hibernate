@@ -7,11 +7,11 @@ import javax.validation.constraints.*;
 @Table(name = "salles")
 public class Salle {
 
-    @Id //instantiation unique d'ID
+    @Id //instantiation unique d'ID, clé primaire
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //Spécification pour la table salles
+    //Spécifications pour la table salles par définition des contraintes sur les champs
     @NotBlank(message = "Le nom est obligatoire")
     @Size(min = 2, max = 100, message = "Le nom doit contenir entre 2 et 100 caractères")
     @Column(nullable = false)
