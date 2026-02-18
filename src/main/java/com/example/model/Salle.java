@@ -7,10 +7,11 @@ import javax.validation.constraints.*;
 @Table(name = "salles")
 public class Salle {
 
-    @Id
+    @Id //instantiation unique d'ID
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //Spécification pour la table salles
     @NotBlank(message = "Le nom est obligatoire")
     @Size(min = 2, max = 100, message = "Le nom doit contenir entre 2 et 100 caractères")
     @Column(nullable = false)
@@ -33,7 +34,7 @@ public class Salle {
     @Min(value = 0, message = "L'étage ne peut pas être négatif")
     private Integer etage;
 
-    // Constructeur par défaut requis par JPA
+    // Le Constructeur par défaut requis par JPA
     public Salle() {
     }
 
@@ -42,7 +43,7 @@ public class Salle {
         this.capacite = capacite;
     }
 
-    // Getters et Setters
+    // Les Getters + Setters
     public Long getId() {
         return id;
     }
