@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public abstract class AbstractCrudService<T, ID> implements CrudService<T, ID> {
 
+    //Cette classe abstraite fournit une implémentation par défaut des opérations CRUD
     protected final EntityManagerFactory emf;
     protected final Class<T> entityClass;
 
@@ -49,6 +50,7 @@ public abstract class AbstractCrudService<T, ID> implements CrudService<T, ID> {
     }
 
     @Override
+    //Méthode pour lister les entités
     public List<T> findAll() {
         EntityManager em = emf.createEntityManager();
         try {
@@ -78,6 +80,7 @@ public abstract class AbstractCrudService<T, ID> implements CrudService<T, ID> {
     }
 
     @Override
+    //Méthode pour supprimer une entité
     public void delete(T entity) {
         EntityManager em = emf.createEntityManager();
         try {
