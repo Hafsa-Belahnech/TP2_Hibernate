@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.List;
 import java.util.Optional;
 
+// Cette interface pour définir les opérations CRUD standard
 public interface CrudService<T, ID> {
     T save(T entity);
     Optional<T> findById(ID id);
